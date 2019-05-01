@@ -7,7 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
 import {deleteRequest, getRequest, postRequest, putRequest} from './utils/api'
-
+import {initMenu} from './utils/utils'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.getRequest = getRequest;
@@ -32,12 +32,15 @@ router.beforeEach((to, from, next)=> {
     if(to.path=='/chat'){
       store.commit("updateMsgList", []);
       next();
+    }else {
+      next()
     }
   }
 })
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

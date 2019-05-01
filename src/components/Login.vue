@@ -41,8 +41,9 @@
           vm.loading = false;
           if (resp && resp.status == 200) {
             var data = resp.data;
-            console.log(" vm.$store==>", vm.$store);
+            console.log(" 步骤1==>", vm.$store);
             vm.$store.commit('login', data.obj);
+            console.log("vm.$route.query.redirect",vm.$route.query.redirect);
             var path = vm.$route.query.redirect;
             vm.$router.replace({path: path == '/' || path == undefined ? '/home' : path});
           }
