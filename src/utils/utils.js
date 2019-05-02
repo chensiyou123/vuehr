@@ -25,6 +25,7 @@ export const initMenu = (router, store)=> {
 }
 export const formatRoutes = (routes)=> {
   let fmRoutes = [];
+
   routes.forEach(router=> {
     let {
       path,
@@ -42,6 +43,16 @@ export const formatRoutes = (routes)=> {
       component(resolve){
         if (component.startsWith("Home")) {
           require(['../components/' + component + '.vue'], resolve)
+        } else if (component.startsWith("Emp")) {
+          require(['../components/emp/' + component + '.vue'], resolve)
+        } else if (component.startsWith("Per")) {
+          require(['../components/personnel/' + component + '.vue'], resolve)
+        } else if (component.startsWith("Sal")) {
+          require(['../components/salary/' + component + '.vue'], resolve)
+        } else if (component.startsWith("Sta")) {
+          require(['../components/statistics/' + component + '.vue'], resolve)
+        } else if (component.startsWith("Sys")) {
+          require(['../components/system/' + component + '.vue'], resolve)
         }
       },
       name: name,

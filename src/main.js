@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
 import {deleteRequest, getRequest, postRequest, putRequest} from './utils/api'
+import {isNotNullORBlank} from './utils/utils'
 import {initMenu} from './utils/utils'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -14,6 +15,7 @@ Vue.prototype.getRequest = getRequest;
 Vue.prototype.postRequest = postRequest;
 Vue.prototype.deleteRequest = deleteRequest;
 Vue.prototype.putRequest = putRequest;
+Vue.prototype.isNotNullORBlank = isNotNullORBlank;
 /* eslint-disable no-new */
 router.beforeEach((to, from, next)=> {
   if (to.name == 'Login') {

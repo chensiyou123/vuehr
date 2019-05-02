@@ -31,7 +31,8 @@
                     <i :class="item.iconCls" style="color: #20a0ff;width: 14px;"></i>
                     <span slot="title">{{item.name}}</span>
                   </template>
-                  <el-menu-item width="180px" style="padding-left: 30px;padding-right:0px;margin-left: 0px;width: 170px;text-align: left" v-for="child in item.children" :index="child.path" :key="child.path">{{child.name}}</el-menu-item>
+                  <el-menu-item width="180px" style="padding-left: 30px;padding-right:0px;margin-left: 0px;width: 170px;text-align: left"
+                                v-for="child in item.children" :index="child.path" :key="child.path">{{child.name}}</el-menu-item>
                 </el-submenu>
               </template>
             </el-menu>
